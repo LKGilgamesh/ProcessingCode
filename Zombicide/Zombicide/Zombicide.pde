@@ -10,6 +10,7 @@ void setup()
   time = new Time();
   titlescreen = new Titlescreen(width/2);
   UI = new userInterface();
+  UI.zombies.updateZombieProx();
 }
 
 void draw()

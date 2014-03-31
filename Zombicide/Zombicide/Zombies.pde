@@ -16,16 +16,14 @@ class Zombies{
   }
  } 
  void updateZombieProx(){
+   zombieProx.clear();
   for(int i = 0;i < zombiesArr.size();i++){
     if(zombiesArr.get(i).playerProx() == true){
        zombieProx.add(i);
+       println("zombie " + i + " added to ZProx");
     }
   } 
-  for(int j = zombieProx.size() - 1;j > 0;j--){
-    if(zombiesArr.get(zombieProx.get(j)).playerProx() == false){
-      zombieProx.remove(j);
-    }
-  }
+
  }
  void display(){
    for(int i = 0;i < zombiesArr.size();i++){

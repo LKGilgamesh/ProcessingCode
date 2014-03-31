@@ -1,6 +1,7 @@
 class InfoMenu{
   float x, y;
   String health, moves, level;
+  int zombieSelect;
  InfoMenu(float x, float y){
   this.x = x;
   this.y = y;
@@ -112,28 +113,27 @@ class InfoMenu{
   } 
  }
  void attackMenu(){
-   int i = 0;
-   int zombieSelect = UI.zombies.zombieProx.get(i);
-   UI.zombies.zombiesArr.get(zombieSelect).highlight();
+   zombieSelect = 0;
+   
    if(mouseX > 635 && mouseX < 765 && mouseY > 340 && mouseY < 366){
-     UI.zombies.removeZombie(zombieSelect);
+    UI.zombies.removeZombie(UI.zombies.zombieProx.get(zombieSelect));
     println("this works");
     UI.player.attack();
     UI.player.attackMenu = false;
   }
   else if(mouseX > 635 && mouseX < 765 && mouseY > 390 && mouseY < 416){
-    if(UI.zombies.zombieProx.size() - 1 > i){
-    i++;
-    zombieSelect = UI.zombies.zombieProx.get(i);
-    UI.zombies.zombiesArr.get(zombieSelect).highlight();
-    println("this works");
+    if(zombieSelect <= UI.zombies.zombieProx.size()){
+      zombieSelect++;
+      zombieSelect = UI.zombies.zombieProx.get(zombieSelect);
+      //UI.zombies.zombiesArr.get(zombieSelect).highlight();
+      println("this works");
     }
   }
   else if(mouseX > 635 && mouseX < 765 && mouseY > 420 && mouseY < 446){
-    if(i > 0){
-    i--;
-    zombieSelect = UI.zombies.zombieProx.get(i);
-    UI.zombies.zombiesArr.get(zombieSelect).highlight();
+    if(zombieSelect > 0){
+    zombieSelect--;
+    zombieSelect = UI.zombies.zombieProx.get(zombieSelect);
+    //UI.zombies.zombiesArr.get(zombieSelect).highlight();
     }
   }
  }

@@ -55,10 +55,13 @@ class Turn{
      }
    }
    turn_Counter++;
+   UI.zombies.updateZombieProx();
    UI.zombies.spawnZombies();
    t= true;
    UI.player.moves= 4;
    println(t);
+   
+   println();
  }
  int pYPos(){
   return UI.player.yPos; 

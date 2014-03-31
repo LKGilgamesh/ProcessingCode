@@ -5,8 +5,8 @@ class Player{
   int moves;
   int health;
   int level;
-  int zombieSelect;
   boolean attackMenu;
+  
   Player(String name,int xPos,int yPos){
    this.name = name; 
    this.xPos = xPos;
@@ -15,7 +15,6 @@ class Player{
    moves = 4;
    level = 1;
    attackMenu = false;
-   zombieSelect = 0;
   }
   void display(){
     rectMode(CENTER);
@@ -26,12 +25,14 @@ class Player{
   }
   void search(){
     moves--;
+    UI.zombies.updateZombieProx();
   }
   void attack(){
     attackMenu = true;
     
     moves--;
     level++;
+    UI.zombies.updateZombieProx();
   }
   
   void takeDamage(){
@@ -43,18 +44,21 @@ class Player{
        yPos+=100;
        println("this also works");
        moves--;
+       UI.zombies.updateZombieProx();
       }
   }
   void moveLeft(){
    if(UI.boardwindow.leftBoundary(xPos,yPos)==true){
        xPos -=100;
        moves--;
+       UI.zombies.updateZombieProx();
       } 
   }
   void moveRight(){
     if(UI.boardwindow.rightBoundary(xPos,yPos)==true){
       xPos +=100;
       moves--; 
+      UI.zombies.updateZombieProx();
       }
   }
   void moveUp(){
@@ -62,6 +66,7 @@ class Player{
        yPos-=100;
        println("this works");
        moves--;
+       UI.zombies.updateZombieProx();
       }
   }
   
