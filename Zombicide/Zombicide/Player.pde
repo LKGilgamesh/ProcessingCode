@@ -25,6 +25,7 @@ class Player{
   }
   void search(){
     moves--;
+    UI.search.hasSearched = true;
     UI.zombies.updateZombieProx();
   }
   void attack(){

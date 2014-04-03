@@ -1,13 +1,14 @@
 class InfoMenu{
   float x, y;
   String health, moves, level;
-  int zombieSelect;
+  boolean pMenu;
  InfoMenu(float x, float y){
   this.x = x;
   this.y = y;
   health = "HP: 5";
   moves = "Moves: 3";
   level = "lvl: 1";
+  pMenu = true;
  } 
  void updateHealth(){
   health = health.substring(0,4) + UI.player.health; 
@@ -52,89 +53,63 @@ class InfoMenu{
   text(level, 788, 30);
   text(moves, 788, 570);
   
-  if(mouseX > 635 && mouseX < 765 && mouseY > 290 && mouseY < 316){
-    noFill();
-    stroke(255,0,0);
-    rect(700,303,130,25);
+  if(pMenu){
+    if(mouseX > 635 && mouseX < 765 && mouseY > 290 && mouseY < 316){
+      noFill();
+      stroke(255,0,0);
+      rect(700,303,130,25);
+    }
+    else if(mouseX > 635 && mouseX < 765 && mouseY > 340 && mouseY < 366){
+      noFill();
+      stroke(255,0,0);
+      rect(700,353,130,25);
+    }
+    else if(mouseX > 635 && mouseX < 765 && mouseY > 390 && mouseY < 416){
+      noFill();
+      stroke(255,0,0);
+      rect(700,403,130,25);
+    }
+    else if(mouseX > 635 && mouseX < 765 && mouseY > 420 && mouseY < 446){
+      noFill();
+      stroke(255,0,0);
+      rect(700,433,130,25);
+    }
+    else if(mouseX > 635 && mouseX < 765 && mouseY > 450 && mouseY < 476){
+      noFill();
+      stroke(255,0,0);
+      rect(700,463,130,25);
+    }
+    else if(mouseX > 635 && mouseX < 765 && mouseY > 480 && mouseY < 506){
+      noFill();
+      stroke(255,0,0);
+      rect(700,493,130,25);
+    }
   }
-  else if(mouseX > 635 && mouseX < 765 && mouseY > 340 && mouseY < 366){
-    noFill();
-    stroke(255,0,0);
-    rect(700,353,130,25);
-  }
-  else if(mouseX > 635 && mouseX < 765 && mouseY > 390 && mouseY < 416){
-    noFill();
-    stroke(255,0,0);
-    rect(700,403,130,25);
-  }
-  else if(mouseX > 635 && mouseX < 765 && mouseY > 420 && mouseY < 446){
-    noFill();
-    stroke(255,0,0);
-    rect(700,433,130,25);
-  }
-  else if(mouseX > 635 && mouseX < 765 && mouseY > 450 && mouseY < 476){
-    noFill();
-    stroke(255,0,0);
-    rect(700,463,130,25);
-  }
-  else if(mouseX > 635 && mouseX < 765 && mouseY > 480 && mouseY < 506){
-    noFill();
-    stroke(255,0,0);
-    rect(700,493,130,25);
-  }
-  
  }
  void menuInteractions(){
   if(mouseX > 635 && mouseX < 765 && mouseY > 290 && mouseY < 316){
-    println("this works");
+    if(!UI.search.hasSearched){
+      UI.search.searchFunction();
+      UI.player.search();
+    }
   }
   else if(mouseX > 635 && mouseX < 765 && mouseY > 340 && mouseY < 366){
     if(UI.zombies.zombieProx.size() > 0){
-    UI.player.attackMenu = true;
+      UI.player.attackMenu = true;
     }
-    println("this works");
   }
   else if(mouseX > 635 && mouseX < 765 && mouseY > 390 && mouseY < 416){
     UI.player.moveUp();
-    
-    println("this works");
   }
   else if(mouseX > 635 && mouseX < 765 && mouseY > 420 && mouseY < 446){
     UI.player.moveDown();
-    println("this works");
   }
   else if(mouseX > 635 && mouseX < 765 && mouseY > 450 && mouseY < 476){
     UI.player.moveRight();
-    println("this works");
   }
   else if(mouseX > 635 && mouseX < 765 && mouseY > 480 && mouseY < 506){
     UI.player.moveLeft();
-    println("this works");
+
   } 
- }
- void attackMenu(){
-   zombieSelect = 0;
-   
-   if(mouseX > 635 && mouseX < 765 && mouseY > 340 && mouseY < 366){
-    UI.zombies.removeZombie(UI.zombies.zombieProx.get(zombieSelect));
-    println("this works");
-    UI.player.attack();
-    UI.player.attackMenu = false;
-  }
-  else if(mouseX > 635 && mouseX < 765 && mouseY > 390 && mouseY < 416){
-    if(zombieSelect <= UI.zombies.zombieProx.size()){
-      zombieSelect++;
-      zombieSelect = UI.zombies.zombieProx.get(zombieSelect);
-      //UI.zombies.zombiesArr.get(zombieSelect).highlight();
-      println("this works");
-    }
-  }
-  else if(mouseX > 635 && mouseX < 765 && mouseY > 420 && mouseY < 446){
-    if(zombieSelect > 0){
-    zombieSelect--;
-    zombieSelect = UI.zombies.zombieProx.get(zombieSelect);
-    //UI.zombies.zombiesArr.get(zombieSelect).highlight();
-    }
-  }
  }
 }

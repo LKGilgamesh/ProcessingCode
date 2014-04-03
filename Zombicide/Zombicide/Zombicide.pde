@@ -31,12 +31,16 @@ void mousePressed()
     titlescreen.menuInteractions();  
   }
   else{
-    if(UI.player.attackMenu == false) { 
-    UI.i_menu.menuInteractions();
+    if(UI.player.health > 0){
+      if(UI.player.attackMenu == false) { 
+        UI.i_menu.menuInteractions();
+      }
+      else{
+         UI.csystem.menuInteractions(); 
+      }
     }
-    else
-    {
-       UI.i_menu.attackMenu(); 
+    if(UI.player.health <= 0){
+      UI.gameover.menuInteractions();
     }
   }
 }

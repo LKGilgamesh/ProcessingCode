@@ -22,10 +22,10 @@ class zombie{
     noFill();
     strokeWeight(2);
     stroke(255,255,0);
-   rect(xPos,yPos,20,20,15); 
+    rect(xPos,yPos,20,20,15); 
   }
   boolean playerProx(){
-   if(abs(xPos - UI.player.xPos) < 150 && abs(yPos - UI.player.yPos) < 150){
+   if(abs(xPos - UI.player.xPos) < (150+((UI.weapon.range-1)*100))&& abs(yPos - UI.player.yPos) < (150+((UI.weapon.range-1)*100))){
       return true;
    } 
    else
