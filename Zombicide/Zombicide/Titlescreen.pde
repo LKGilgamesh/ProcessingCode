@@ -48,7 +48,9 @@ class Titlescreen
   }
   void menuInteractions(){
     if(mouseX > wCenter -100 && mouseX <wCenter + 100 && mouseY > 240 && mouseY < 280){
-      println("start button works");        
+      println("start button works");  
+      music.stopTitleTheme();
+      music.playGameMusic();      
       endTitlescreen = true;  
     }
     else if(mouseX > wCenter -100 && mouseX <wCenter + 100 && mouseY > 280 && mouseY < 320){

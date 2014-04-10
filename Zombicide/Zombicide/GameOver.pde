@@ -15,6 +15,7 @@ class GameOver{
    
     if(mouseX > 398 && mouseX <448 && mouseY > 479 && mouseY < 508){
       rect(423,493,50,28,3);
+      music.player[0].loop();
     }
     else if(mouseX > 471 && mouseX < 521 && mouseY > 479 && mouseY < 508){
       rect(496,493,50,28,3);

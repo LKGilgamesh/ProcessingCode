@@ -19,11 +19,14 @@ class userInterface{
     search = new Search();
     gameover = new GameOver(0,0);
     csystem = new combatSystem();
+    music.player[1].loop();
   }
   void display(){
      
      if(player.health <= 0){
        gameover.display();
+       music.player[1].rewind();
+       music.player[1].pause();
      }
      else{
      boardwindow.display(); 
