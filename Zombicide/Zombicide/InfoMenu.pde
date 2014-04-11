@@ -34,6 +34,7 @@ class InfoMenu{
   rect(700,433,130,25);
   rect(700,463,130,25);
   rect(700,493,130,25);
+  rect(650,563,60,25);
   
   textSize(20);
   fill(255);
@@ -44,7 +45,8 @@ class InfoMenu{
   text("Move Down", 700, 430);
   text("Move Right", 700, 460);
   text("Move Left", 700, 490);
-  
+  textSize(18);
+  text("Save",650,560);
   textAlign(LEFT);
   textSize(18);
   text(health, 612, 30);
@@ -84,6 +86,11 @@ class InfoMenu{
       stroke(255,0,0);
       rect(700,493,130,25);
     }
+    else if(mouseX > 620 && mouseX < 680 && mouseY > 550 && mouseY < 575){
+      noFill();
+      stroke(255,0,0);
+      rect(650,563,60,25);
+    }
   }
  }
  void menuInteractions(){
@@ -111,5 +118,8 @@ class InfoMenu{
     UI.player.moveLeft();
 
   } 
+  else if(mouseX > 620 && mouseX < 680 && mouseY > 550 && mouseY < 575){
+    save.saveGame();
+  }
  }
 }

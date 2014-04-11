@@ -1,33 +1,38 @@
-import ddf.minim.spi.*;
-import ddf.minim.signals.*;
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.ugens.*;
-import ddf.minim.effects.*;
+
 
 class Music{
-  Minim minim;
-  AudioPlayer[] player;
+
+  boolean tmusic;
+  boolean gmusic;
   
   Music(){
-    minim = new Minim(this);
-    player = new AudioPlayer[2];
+    tmusic = true;
+    gmusic = false;
+
     player[0] = minim.loadFile("TitleTheme.mp3");
     player[1] = minim.loadFile("GameTheme.mp3");
 
   }
   void playTitleTheme(){
-    player[0].loop();
+    if(tmusic){
+      player[0].loop();
+      tmusic = false;
+    }
   }
   void stopTitleTheme(){
     player[0].rewind();
     player[0].pause();
+    tmusic = true;
   }
   void playGameTheme(){
-    player[1].loop(); 
+    if(gmusic){
+      player[1].loop(); 
+      gmusic = false;
+    }
   }
   void stopGameTheme(){
     player[1].rewind();
     player[1].pause(); 
+    gmusic = true;
   }
 }

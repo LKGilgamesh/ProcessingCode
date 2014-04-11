@@ -3,7 +3,7 @@ class Zombies{
   ArrayList<Integer> zombieProx;
   
  //the following are the possible positions that the zombies could spawn from
-  int[] initialXPos = {23,23,177,223,577,577,577,577,377,423,177,223};
+  int[] initialXPos = {023,23,177,223,577,577,577,577,377,423,177,223};
   int[] initialYPos = {177,223,23,23,177,223,377,423,577,577,577,577};
  Zombies(){
   zombiesArr = new ArrayList<zombie>();

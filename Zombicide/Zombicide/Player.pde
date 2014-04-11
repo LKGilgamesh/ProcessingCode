@@ -1,5 +1,4 @@
 class Player{
-  String name;
   int xPos;
   int yPos;
   int moves;
@@ -7,13 +6,12 @@ class Player{
   int level;
   boolean attackMenu;
   
-  Player(String name,int xPos,int yPos){
-   this.name = name; 
+  Player(int xPos,int yPos, int moves, int health, int level){
    this.xPos = xPos;
    this.yPos = yPos;
-   health = 5;
-   moves = 4;
-   level = 1;
+   this.health = health;
+   this.moves = moves;
+   this.level = level;
    attackMenu = false;
   }
   void display(){

@@ -10,7 +10,7 @@ class userInterface{
   combatSystem csystem;
   
   userInterface(){
-    player = new Player("leon",200,200);
+    player = new Player(200,200,4,5,1);
     zombies = new Zombies();
     boardwindow = new BoardWindow(0,0); 
     i_menu = new InfoMenu(602,2);
@@ -19,14 +19,12 @@ class userInterface{
     search = new Search();
     gameover = new GameOver(0,0);
     csystem = new combatSystem();
-    music.player[1].loop();
   }
   void display(){
      
      if(player.health <= 0){
        gameover.display();
-       music.player[1].rewind();
-       music.player[1].pause();
+       music.stopGameTheme();
      }
      else{
      boardwindow.display(); 

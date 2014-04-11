@@ -1,0 +1,10 @@
+﻿pXPos
+pYPos
+moves
+health
+level
+
+23 177
+23 223
+177 23
+223 23

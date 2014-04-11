@@ -4,11 +4,13 @@ class Titlescreen
 {
   int wCenter;
   boolean endTitlescreen;
+  boolean loadEndTitlescreen;
   PImage titleImage;
   
   Titlescreen(int wCenter){
     this.wCenter = wCenter;
     endTitlescreen = false;
+    loadEndTitlescreen = false;
     titleImage = loadImage("Titlescreen.jpg");
   }
   
@@ -48,13 +50,13 @@ class Titlescreen
   }
   void menuInteractions(){
     if(mouseX > wCenter -100 && mouseX <wCenter + 100 && mouseY > 240 && mouseY < 280){
-      println("start button works");  
-      music.stopTitleTheme();
-      music.playGameMusic();      
+      println("start button works");       
       endTitlescreen = true;  
     }
     else if(mouseX > wCenter -100 && mouseX <wCenter + 100 && mouseY > 280 && mouseY < 320){
       println("load button works");
+      loadEndTitlescreen = true;
+    load.loadGame();
     }
     else if(mouseX > wCenter -100 && mouseX <wCenter + 100 && mouseY > 320 && mouseY < 360){
       println("Introduction works");
