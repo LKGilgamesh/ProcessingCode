@@ -8,11 +8,13 @@ class BoardWindow{
  {
    this.x = x;
    this.y = y;
+
    boardImage = loadImage("zombicide_map.jpg"); 
  }
  
  void display(){
    noFill();
+      imageMode(CORNER);
    image(boardImage,x,y,600,600); 
  }
  

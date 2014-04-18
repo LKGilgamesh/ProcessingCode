@@ -5,6 +5,7 @@ class Player{
   int health;
   int level;
   boolean attackMenu;
+  PImage playerPic;
   
   Player(int xPos,int yPos, int moves, int health, int level){
    this.xPos = xPos;
@@ -13,13 +14,16 @@ class Player{
    this.moves = moves;
    this.level = level;
    attackMenu = false;
+   playerPic = loadImage("Zombicide Player.png");
   }
   void display(){
     rectMode(CENTER);
-    fill(0,0,255);
+    fill(60,255,60);
     stroke(255);
     strokeWeight(1);
-    rect(xPos,yPos,20,20,15); 
+    ellipse(xPos,yPos,27,27); 
+    imageMode(CENTER);
+    image(playerPic,xPos,yPos);
   }
   void search(){
     moves--;
