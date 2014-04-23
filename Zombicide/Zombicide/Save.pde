@@ -11,7 +11,7 @@ class Save{
     player.setInt("moves", UI.player.moves);
     player.setInt("health", UI.player.health);
     player.setInt("level", UI.player.level);
-    
+    player.setBoolean("hasKey", UI.player.hasKey);
     values.setJSONObject(0, player);
     
     if(UI.zombies.zombiesArr.size() != 0){

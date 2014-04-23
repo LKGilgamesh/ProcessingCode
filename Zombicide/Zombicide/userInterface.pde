@@ -10,7 +10,7 @@ class userInterface{
   combatSystem csystem;
   
   userInterface(){
-    player = new Player(200,200,4,5,1);
+    player = new Player(200,200,4,5,1,false);
     zombies = new Zombies();
     boardwindow = new BoardWindow(0,0); 
     i_menu = new InfoMenu(602,2);

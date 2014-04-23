@@ -4,15 +4,17 @@ class Player{
   int moves;
   int health;
   int level;
+  boolean hasKey;
   boolean attackMenu;
   PImage playerPic;
   
-  Player(int xPos,int yPos, int moves, int health, int level){
+  Player(int xPos,int yPos, int moves, int health, int level, boolean hasKey){
    this.xPos = xPos;
    this.yPos = yPos;
    this.health = health;
    this.moves = moves;
    this.level = level;
+   this.hasKey = hasKey;
    attackMenu = false;
    playerPic = loadImage("Zombicide Player.png");
   }
@@ -28,6 +30,7 @@ class Player{
   void search(){
     moves--;
     UI.search.hasSearched = true;
+    UI.i_menu.updateWeapon();
     UI.zombies.updateZombieProx();
   }
   void attack(){

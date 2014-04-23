@@ -1,6 +1,6 @@
 class InfoMenu{
   float x, y;
-  String health, moves, level;
+  String health, moves, level, currentWeapon;
   boolean pMenu;
  InfoMenu(float x, float y){
   this.x = x;
@@ -8,6 +8,7 @@ class InfoMenu{
   health = "HP: 5";
   moves = "Moves: 3";
   level = "lvl: 1";
+  currentWeapon = "Hand Gun";
   pMenu = true;
  } 
  void updateHealth(){
@@ -18,6 +19,9 @@ class InfoMenu{
  }
  void updateMoves(){
   moves = moves.substring(0,7) +  UI.player.moves;
+ }
+ void updateWeapon(){
+  currentWeapon = UI.weapon.currentGun;
  }
  void display(){
    stroke(255);
@@ -47,6 +51,8 @@ class InfoMenu{
   text("Move Left", 700, 490);
   textSize(18);
   text("Save",650,560);
+  text(currentWeapon,700,200);
+  
   textAlign(LEFT);
   textSize(18);
   text(health, 612, 30);

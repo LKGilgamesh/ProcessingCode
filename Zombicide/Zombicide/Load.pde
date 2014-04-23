@@ -1,5 +1,6 @@
 class Load{
  int xPos, yPos, moves, health, level;
+ boolean hasKey;
  JSONArray values;
  ArrayList<Integer> zXPos;
  ArrayList<Integer> zYPos;
@@ -9,6 +10,7 @@ class Load{
    moves = 0;
    health = 0;
    level = 0;
+   hasKey = false;
    zXPos = new ArrayList<Integer>();
    zYPos = new ArrayList<Integer>();
  } 
@@ -21,6 +23,7 @@ class Load{
     moves = player.getInt("moves");
     health = player.getInt("health");
     level = player.getInt("level");
+    hasKey = player.getBoolean("hasKey");
   }    
   if(values.size() > 1){
     for(int i = 1; i < values.size(); i++){
