@@ -1,0 +1,20 @@
+*Pick character
+*Pick Window/corner
+-Max of two people per window
+-Squad of up to four
+-Leave squad at the beginning of turn.
+-Roll dice
+-Odds vertical
+-Even Horizontal
+-Flash Card/jpeg (if click then take down)
+If move max distance then engage without using move point - but not less.
+-You can only enter 1 floor.
+
+Getting to 2nd floor
+------------------------
+
+-Loot has to go to one person, but it can be used for the group
+
+
+Damge application
+-------------------
