@@ -30,29 +30,16 @@ class InfoMenu{
    rectMode(CORNER);
   rect(x,y,194,594,4); 
   
-  rectMode(CENTER);
-  strokeWeight(3);
-  rect(700,303,130,25);
-  rect(700,353,130,25);
-  rect(700,403,130,25);
-  rect(700,433,130,25);
-  rect(700,463,130,25);
-  rect(700,493,130,25);
-  rect(650,563,60,25);
+ 
   
-  textSize(20);
-  fill(255);
   textAlign(CENTER,CENTER);
-  text("Search", 700, 300);
-  text("Attack", 700, 350);
-  text("Move Up", 700, 400);
-  text("Move Down", 700, 430);
-  text("Move Right", 700, 460);
-  text("Move Left", 700, 490);
+  fill(255);
   textSize(18);
-  text("Save",650,560);
   text(currentWeapon,700,200);
   
+  if(UI.player.hasKey){
+    text("Key Obtained!", 700,250);
+  }
   textAlign(LEFT);
   textSize(18);
   text(health, 612, 30);
@@ -61,6 +48,34 @@ class InfoMenu{
   text(level, 788, 30);
   text(moves, 788, 570);
   
+
+ }
+ void displayMenu(){
+   
+  rectMode(CENTER);
+  strokeWeight(3);
+  fill(0);
+  rect(700,303,130,25);
+  rect(700,353,130,25);
+  rect(700,403,130,25);
+  rect(700,433,130,25);
+  rect(700,463,130,25);
+  rect(700,493,130,25);
+  rect(650,563,60,25);
+  textSize(20);
+  fill(255);
+  textAlign(CENTER,CENTER);
+  
+  text("Search", 700, 300);
+  text("Attack", 700, 350);
+  text("Move Up", 700, 400);
+  text("Move Down", 700, 430);
+  text("Move Right", 700, 460);
+  text("Move Left", 700, 490);
+  
+  textSize(18);
+  
+  text("Save",650,560);
   if(pMenu){
     if(mouseX > 635 && mouseX < 765 && mouseY > 290 && mouseY < 316){
       noFill();
@@ -97,7 +112,7 @@ class InfoMenu{
       stroke(255,0,0);
       rect(650,563,60,25);
     }
-  }
+    }
  }
  void menuInteractions(){
   if(mouseX > 635 && mouseX < 765 && mouseY > 290 && mouseY < 316){

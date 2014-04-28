@@ -3,6 +3,43 @@ class combatSystem{
  combatSystem(){
  zombieSelect = 0; 
  }
+ void display(){
+   
+   stroke(255);
+   strokeWeight(3);
+   fill(0);
+   rectMode(CENTER);
+   rect(700,353,130,25);
+   rect(700,403,130,25);
+   rect(700,433,130,25);
+   
+
+   fill(255);
+   textAlign(CENTER,CENTER);
+   text("Attack", 700, 350);
+   text("Next",700, 400);
+   text("Previous",700, 430);
+   
+
+   
+   if(UI.i_menu.pMenu){
+    if(mouseX > 635 && mouseX < 765 && mouseY > 340 && mouseY < 366){
+      noFill();
+      stroke(255,0,0);
+      rect(700,353,130,25);
+    }
+    else if(mouseX > 635 && mouseX < 765 && mouseY > 390 && mouseY < 416){
+      noFill();
+      stroke(255,0,0);
+      rect(700,403,130,25);
+    }
+    else if(mouseX > 635 && mouseX < 765 && mouseY > 420 && mouseY < 446){
+      noFill();
+      stroke(255,0,0);
+      rect(700,433,130,25);
+    }
+   }
+ }
   void menuInteractions(){
    if(mouseX > 635 && mouseX < 765 && mouseY > 340 && mouseY < 366){
     UI.zombies.removeZombie(UI.zombies.zombieProx.get(zombieSelect));

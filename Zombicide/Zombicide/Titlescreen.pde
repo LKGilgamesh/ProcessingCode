@@ -16,6 +16,7 @@ class Titlescreen
   
   void display(){
       background(100);
+      imageMode(CORNER);
       image(titleImage,0,0);
       rectMode(CENTER);
       fill(200,0,0);
@@ -59,6 +60,7 @@ class Titlescreen
     load.loadGame();
     }
     else if(mouseX > wCenter -100 && mouseX <wCenter + 100 && mouseY > 320 && mouseY < 360){
+      instructions.displayI = true;
       println("Introduction works");
     }
     else if(mouseX > wCenter -100 && mouseX <wCenter + 100 && mouseY > 360 && mouseY < 400){

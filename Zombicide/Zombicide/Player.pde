@@ -30,7 +30,13 @@ class Player{
   void search(){
     moves--;
     UI.search.hasSearched = true;
-    UI.i_menu.updateWeapon();
+    if(UI.keys.onKey()){
+      hasKey = true;
+      UI.keys.deleteKey();
+    }
+    else{
+      UI.i_menu.updateWeapon();
+    }
     UI.zombies.updateZombieProx();
   }
   void attack(){

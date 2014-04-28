@@ -14,6 +14,7 @@ userInterface UI;
 Music music;
 Save save;
 Load load;
+Instructions instructions;
 
 void setup()
 {
@@ -28,6 +29,8 @@ void setup()
   music = new Music();
   save = new Save();
   load = new Load();
+  instructions = new Instructions();
+  
 }
 void draw()
 {
@@ -35,7 +38,11 @@ void draw()
   time.startTimer(); 
   
   if(titlescreen.endTitlescreen == false && titlescreen.loadEndTitlescreen == false){
-    titlescreen.display();
+    if(instructions.displayI)
+      instructions.display();
+    else
+      titlescreen.display();
+    
     music.stopGameTheme();
     music.playTitleTheme();
   }
@@ -55,10 +62,18 @@ void draw()
 
 void mousePressed()
 {
+
   if(titlescreen.endTitlescreen == false && titlescreen.loadEndTitlescreen == false){
-    titlescreen.menuInteractions();  
+    if(instructions.displayI){
+      instructions.menuInteractions();
+    }
+    else
+      titlescreen.menuInteractions();  
   }
   else if(titlescreen.endTitlescreen == true || titlescreen.loadEndTitlescreen == true){
+    if(UI.player.xPos == 500 && UI.player.yPos == 300){
+      UI.w_screen.menuInteractions();
+    }
     if(UI.player.health > 0){
       if(UI.player.attackMenu == false) { 
         UI.i_menu.menuInteractions();

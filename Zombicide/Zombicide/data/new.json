@@ -1,95 +1,23 @@
 [
   {
-    "level": 1,
-    "yPos": 200,
+    "level": 2,
+    "yPos": 100,
     "xPos": 200,
-    "moves": 3,
+    "moves": 2,
     "hasKey": false,
     "health": 5
   },
   {
-    "yPos": 177,
-    "xPos": 219
-  },
-  {
     "yPos": 223,
-    "xPos": 177
-  },
-  {
-    "yPos": 223,
-    "xPos": 223
-  },
-  {
-    "yPos": 177,
-    "xPos": 377
-  },
-  {
-    "yPos": 223,
-    "xPos": 377
-  },
-  {
-    "yPos": 377,
-    "xPos": 223
-  },
-  {
-    "yPos": 177,
-    "xPos": 119
-  },
-  {
-    "yPos": 223,
-    "xPos": 123
-  },
-  {
-    "yPos": 123,
-    "xPos": 177
-  },
-  {
-    "yPos": 123,
-    "xPos": 223
-  },
-  {
-    "yPos": 177,
-    "xPos": 477
-  },
-  {
-    "yPos": 377,
-    "xPos": 477
+    "xPos": 577
   },
   {
     "yPos": 423,
-    "xPos": 477
+    "xPos": 577
   },
   {
     "yPos": 577,
-    "xPos": 277
-  },
-  {
-    "yPos": 477,
-    "xPos": 223
-  },
-  {
-    "yPos": 177,
-    "xPos": 19
-  },
-  {
-    "yPos": 223,
-    "xPos": 23
-  },
-  {
-    "yPos": 23,
-    "xPos": 223
-  },
-  {
-    "yPos": 177,
-    "xPos": 577
-  },
-  {
-    "yPos": 223,
-    "xPos": 577
-  },
-  {
-    "yPos": 377,
-    "xPos": 577
+    "xPos": 423
   },
   {
     "yPos": 577,

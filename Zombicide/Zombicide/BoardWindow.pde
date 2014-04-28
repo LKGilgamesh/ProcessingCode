@@ -14,8 +14,12 @@ class BoardWindow{
  
  void display(){
    noFill();
-      imageMode(CORNER);
+   imageMode(CORNER);
    image(boardImage,x,y,600,600); 
+   fill(255,0,0);
+   strokeWeight(2);
+   stroke(255);
+   rect(450,300,18,40);
  }
  
 boolean leftBoundary(int xPos,int yPos){
@@ -23,18 +27,18 @@ boolean leftBoundary(int xPos,int yPos){
     xPos > 550 && xPos <=600 && yPos > 250 && yPos < 350 || xPos >=0 && xPos < 50){
   return false; 
  }
- else if(xPos > 350 && xPos < 450 && yPos > 250 && yPos < 550 && UI.player.hasKey == false){
-   return false;
- }
  else{
   return true; 
  }
 }
 boolean rightBoundary(int xPos,int yPos){
- if(xPos > 150 && xPos < 250 && yPos >= 0 && yPos < 150 || xPos > 150 && xPos < 250 && yPos > 250 && yPos < 550 ||
-    xPos > 350 && xPos < 450 && yPos > 250 && yPos < 350 || xPos > 350 && xPos < 450 && yPos > 450 && yPos <= 600 ||
-    xPos > 450 && xPos < 550 && yPos > 250 && yPos < 350 || xPos > 550 && xPos <= 600){
+ if(xPos > 150 && xPos < 250 && yPos >= 0  && yPos <  150 || xPos > 150 && xPos < 250 && yPos > 250 && yPos < 550 ||
+    xPos > 350 && xPos < 450 && yPos > 450 && yPos <= 600 || xPos > 450 && xPos < 550 && yPos > 250 && yPos < 350 ||
+    xPos > 550 && xPos <= 600){
   return false; 
+ }
+ else if(xPos > 350 && xPos < 450 && yPos > 250 && yPos < 350 && UI.player.hasKey == false){
+   return false;
  }
  else{
  return true;}
