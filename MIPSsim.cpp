@@ -39,7 +39,8 @@ int PCToIndex(int PC){
 }
 struct instruction{
 	std::string Binary;
-	std::string Name = "";
+	std::string Name;
+	Name = "";
 	int PC = 128;
 	int rs = 0;
 	int rt = 0;
