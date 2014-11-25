@@ -40,19 +40,18 @@ int PCToIndex(int PC){
 struct instruction{
 	std::string Binary;
 	std::string Name;
-	Name = "";
-	int PC = 128;
-	int rs = 0;
-	int rt = 0;
-	int rd = 0;
-	bool category2 = false;
-	bool category3 = false;
-	int immediate_value = 0;
+	int PC;
+	int rs;
+	int rt;
+	int rd;
+	bool category2;
+	bool category3;
+	int immediate_value;
 };
 struct Data{
 	std::string Binary;
-	int PC = 0;
-	int theData = 0;
+	int PC;
+	int theData;
 };
 class Instructions{
 private:	instruction tempinstruction;
@@ -253,13 +252,15 @@ public:	 void computeValues(std::string str, int PC){
 class Analysis{
 	Instructions instructions;
 	Values values;
-	int PC = 128;
+	int PC;
 	int Reg[32];
-	bool startBreak = false;
+	bool startBreak;
 	std::ifstream input;
 	std::ofstream output;
 	std::string tempstring;
 public:		Analysis(){
+				startBreak = false;
+				PC = 128;
 				for (int i = 0; i < 32; i++){
 					Reg[i] = 0;
 				}
